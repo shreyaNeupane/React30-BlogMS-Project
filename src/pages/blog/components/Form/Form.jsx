@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Form = () => {
+const Form = ({type}) => {
   return (
-    <>
+    <div>
       <link
         rel="stylesheet"
         href="https://cdn.tailgrids.com/tailgrids-fallback.css"
@@ -23,8 +23,7 @@ const Form = () => {
                   lg:text-[36px]
                   xl:text-[40px]
                   "
-              >
-                CREATE BLOG
+              >{type} BLOG
               </h2>
             </div>
             <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
@@ -156,7 +155,7 @@ const Form = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
