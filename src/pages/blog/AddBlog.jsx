@@ -1,11 +1,12 @@
 import React from 'react'
+import Layout from '../../components/layout/Layout'
 
 const AddBlog = () => {
   return (
-    <div>
+    <Layout>
       
-    </div>
-  )
+    </Layout>
+  );
 }
 
 export default AddBlog
