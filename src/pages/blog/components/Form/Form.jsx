@@ -8,14 +8,15 @@ const Form = ({type}) => {
         href="https://cdn.tailgrids.com/tailgrids-fallback.css"
       />
 
-      <section className="bg-blue-200 py-20 lg:py-[120px] overflow-hidden relative z-10">
+      <section className="bg-blue-200 py-4 lg:py-6 overflow-hidden relative z-10">
         <div className="container">
-          <div className=" ">
+          <div className="flex flex-col justify-center items-center">
             <div className="w-full lg:w-1/2 xl:w-6/12 px-4">
               <h2
                 className="
                   text-dark
-                  mb-6
+                  mb-2
+                
                   uppercase
                   font-bold
                   text-[32px]
@@ -23,7 +24,8 @@ const Form = ({type}) => {
                   lg:text-[36px]
                   xl:text-[40px]
                   "
-              >{type} BLOG
+              >
+                {type} BLOG
               </h2>
             </div>
             <div className="w-full lg:w-1/2 xl:w-5/12 px-4">

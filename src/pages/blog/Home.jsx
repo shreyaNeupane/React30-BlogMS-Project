@@ -6,7 +6,10 @@ import Card from './components/card/Card'
 const Home = () => {
   return (
     <Layout>
-      <div className='flex flex-wrap justify-center space-y-5 mt-3 '>
+      <div className="flex flex-wrap justify-around space-y-5 mt-3 gap-3">
+        <Card />
+        <Card />
+        <Card />
         <Card />
         <Card />
         <Card />
