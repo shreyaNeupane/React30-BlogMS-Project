@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Form = ({type}) => {
+
+
   return (
     <div>
       <link
@@ -16,7 +18,6 @@ const Form = ({type}) => {
                 className="
                   text-dark
                   mb-2
-                
                   uppercase
                   font-bold
                   text-[32px]
