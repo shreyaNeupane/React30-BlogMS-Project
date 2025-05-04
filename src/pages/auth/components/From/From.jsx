@@ -1,28 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const From = ({type , onSubmit}) => {
-    const[data,setData] = useState({
-      email : '',
-      username : '',
-      password : ''
-    })
-    const handleChange = (e)=> { 
-         const {name , value} = e.target 
-         setData({
-          ...data,
-          [name] :value
-         })
-    }
-    const handleSubmit = (e) => {
-      // avoids page reload
-      e.preventDefault() 
-      onSubmit(data)
-    }
+const From = ({ type, onSubmit }) => {
+  const [data, setData] = useState({
+    email: "",
+    username: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+  const handleSubmit = (e) => {
+    // avoids page reload
+    e.preventDefault();
+    onSubmit(data);
+  };
   return (
     <div className="relative flex min-h-screen text-gray-800 antialiased flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
       <div className="relative py-3 sm:w-96 mx-auto text-center">
         <span className="text-2xl font-light ">
-          {type === "login"
+          {type === "Login"
             ? "Login here to continue ..."
             : "Register here to continue ..."}
         </span>
@@ -36,7 +37,8 @@ const From = ({type , onSubmit}) => {
                 name="email"
                 placeholder="username"
                 onChange={handleChange}
-                className="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required
+                className="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md"
+                required
               />
               {type === "Register" && (
                 <>
@@ -46,7 +48,8 @@ const From = ({type , onSubmit}) => {
                     name="username"
                     placeholder="Username"
                     onChange={handleChange}
-                    className="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required
+                    className="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md"
+                    required
                   />
                 </>
               )}
@@ -56,7 +59,8 @@ const From = ({type , onSubmit}) => {
                 name="password"
                 placeholder="Password"
                 onChange={handleChange}
-                className="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required
+                className="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md"
+                required
               />
               <div className="flex justify-between items-baseline">
                 <button
@@ -70,11 +74,21 @@ const From = ({type , onSubmit}) => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> <br></br>
+          {type === "Register" ? (
+            <Link to="/login" style={{ color: "blue" }}>
+              Go to login
+            </Link>
+          ) : (
+            <Link to="/register" style={{ color: "blue" }}>
+              {" "}
+              Go to Register
+            </Link>
+          )}
         </form>
       </div>
     </div>
   );
-}
+};
 
-export default From
+export default From;
