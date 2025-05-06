@@ -5,7 +5,7 @@ const Form = ({type , onSubmit}) => {
       title:'',
       subtitle: '',
       description: '',
-      category : '',
+        category : '',
       image : ''
     })
     const handleChange = (e) => {

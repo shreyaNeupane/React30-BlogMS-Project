@@ -16,8 +16,15 @@ const From = ({ type, onSubmit }) => {
   };
   const handleSubmit = (e) => {
     // avoids page reload
-    e.preventDefault();
-    onSubmit(data);
+   e.preventDefault()
+  if (type === "Login") {
+    onSubmit({
+      email: data.email,
+      password: data.password,
+    });
+  } else {
+    onSubmit(data); // For Register, send all fields
+  }
   };
   return (
     <div className="relative flex min-h-screen text-gray-800 antialiased flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
@@ -35,7 +42,7 @@ const From = ({ type, onSubmit }) => {
               <input
                 type="text"
                 name="email"
-                placeholder="username"
+                placeholder="email "
                 onChange={handleChange}
                 className="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md"
                 required
@@ -67,7 +74,7 @@ const From = ({ type, onSubmit }) => {
                   type="submit"
                   className="mt-4 bg-purple-500 text-white py-2 px-6 rounded-md hover:bg-purple-600 "
                 >
-                  Login
+                  Submit
                 </button>
                 <a href="#" className="text-sm hover:underline">
                   Forgot password?
