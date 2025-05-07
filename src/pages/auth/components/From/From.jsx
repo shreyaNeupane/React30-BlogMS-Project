@@ -17,14 +17,14 @@ const From = ({ type, onSubmit }) => {
   const handleSubmit = (e) => {
     // avoids page reload
    e.preventDefault()
-  if (type === "Login") {
-    onSubmit({
-      email: data.email,
-      password: data.password,
-    });
-  } else {
+  // if (type === "Login") {
+  //   onSubmit({
+  //     email: data.email,
+  //     password: data.password,
+  //   });
+  // } else {
     onSubmit(data); // For Register, send all fields
-  }
+  // }
   };
   return (
     <div className="relative flex min-h-screen text-gray-800 antialiased flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
