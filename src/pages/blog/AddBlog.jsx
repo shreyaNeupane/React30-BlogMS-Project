@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const AddBlog = () => {
-  const navigate= useNavigate() 
+  const navigate = useNavigate() 
   const handleCreateBlog = async (data) => {
    
     try{
